@@ -1,0 +1,14 @@
+.home-cards-container {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(115, 38, 115);
+    justify-content: center;
+    
+}
+
+.home-principal-container {
+    margin: 50px;
+    background-color: rgb(255, 174, 22);text-align: center;border: 10px solid black;
+    padding: 25px;
+}

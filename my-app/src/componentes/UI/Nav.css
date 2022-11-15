@@ -1,0 +1,11 @@
+.containerNavBar{
+    background-color: black;
+    color: white;
+    height: 100px;
+}
+.containerNavBarButtons{
+    display: flex;
+    font-size: 40px;
+    justify-content: space-evenly;
+    margin-top: auto;
+}
