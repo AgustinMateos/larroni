@@ -4,7 +4,7 @@ import Catalogo from '../../ApiProd/api'
 import { useParams } from "react-router-dom"
 import {darkModeContext} from "../../Context/Context"
 import '../../screens/Home/Home.css'
-import {doc,getFirestore, collection, getDocs} from 'firebase/firestore'
+import {doc,getFirestore, collection, getDocs, addDoc} from 'firebase/firestore'
 
 
 
@@ -19,6 +19,20 @@ function Home() {
       setProductos(productos)
     },3000);
   }
+
+const sendOrder = () =>{
+  
+  const order ={
+    buyer:{name:"agus", phone:111, email:"agus@gmail.com", item:[{name:"bici", price:100}],
+    total:100,}
+  }
+  const db = getFirestore();
+  const ordersColecction=collection(db,"OrderColecction")
+
+  addDoc(ordersColecction, order).then((id)=>console.log(id))
+}
+
+
   useEffect(() => {
     const db = getFirestore();
     const itemsCatalagoRef=collection(db,"items")
@@ -41,7 +55,7 @@ function Home() {
       <input id="filter" name="filter" type="text" value={filter}
         onChange={(event) => setFilter(event.target.value)}/>
       </div>
-
+       <button onClick={()=>{sendOrder()}}>send</button>
       <div className='home-cards-container'>
        <darkModeContext.Provider value={false}>
         {cat 

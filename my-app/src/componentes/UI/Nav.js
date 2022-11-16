@@ -11,7 +11,6 @@ const Nav = () => {
             <li><Link to={'/categoria/comun'}>Bebidas Comunes</Link></li>
             <li><Link to={'/categoria/light'}>Bebidas Light</Link></li>
         </ul>
-        
         </div> 
     </div>)
 }

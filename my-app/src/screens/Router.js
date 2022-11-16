@@ -7,14 +7,13 @@ import Footer from "../componentes/Footer/Footer"
 
 const Router=()=>{
    return (
-    
    <BrowserRouter>
-   
    <Nav/>
    <Routes>
     <Route path="/" element={<Home/>}></Route>
     <Route path="/Producto/:idproducto" element={<Producto/>}></Route>
     <Route path="/categoria/:cat" element={<Home/>}></Route>
+    <Route path="/categoria/:cat/Producto/:idproducto" element={<Producto/>}></Route>
     <Route path="/*" element={<div>404 error</div>}></Route>
    </Routes>
    <Footer/>
